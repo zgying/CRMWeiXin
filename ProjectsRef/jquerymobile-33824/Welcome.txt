@@ -1,0 +1,22 @@
+Hello,
+
+Thank you for joining the jQuery Mobile team. I would like to introduce myself my name is Matthew Elgert I or my partners can be reached on Skype as mdelgert or via email mdelgert@yahoo.com CC: b1wgod@live.com, rahat036@gmail.com and pedro.ruschel@hotmail.com.
+
+Many people have recently joined 118 developers as of the moment. If anyone is interested in helping with the management of the new developers and project your help would be appreciated please contact me.  
+
+Please at your earliest convenience send an email to mdelgert@yahoo.com CC:b1wgod@live.com, rahat036@gmail.com and pedro.ruschel@hotmail.com and provide the following.
+
+Codeplex account name(need this to cross reference with ur emails)
+Time zone (UTC)
+Skype
+Preferred Position
+
+For more information on downloading developer tools or MSDN and Telerik license request please visit http://jquerymobile.codeplex.com/documentation
+
+Thanks and happy coding,
+
+Matthew
+
+
+CC:
+rahat036@gmail.com, pedro.ruschel@hotmail.com

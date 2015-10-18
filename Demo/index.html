@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>			
+		<meta charset="UTF-8"/>
+		<meta name = "viewport" content = "width=device-width, minimum-scale=1, maximum-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="pageone">
+			<h2>我的商机</h2>
+			  <div data-role="content">
+			    <div data-role="collapsible"  data-collapsed="false">
+			    <h4>客户一</h4>
+			    <ul data-role="listview">
+			      <li><a href="#pagetwo">HIS系统</a></li>
+			      <li><a href="#pagetwo">集成平台</a></li>
+			    </ul>
+			  </div>
+			
+			    <div data-role="collapsible"  data-collapsed="false">
+			    <h4>客户二</h4>
+			    <ul data-role="listview">
+			       <li><a href="#">HIS系统</a></li>
+			      <li><a href="#">集成平台</a></li>
+			    </ul>
+			    </div>
+			
+			    <div data-role="collapsible"  data-collapsed="false">
+			    <h4>客户三</h4>
+			    <ul data-role="listview">
+			      <li><a href="#">HIS系统</a></li>
+			      <li><a href="#">集成平台</a></li>
+			    </ul>
+			    </div>
+			  </div>
+		  
+		  
+		  <div data-role="footer" data-position="fixed">
+		        <div data-role="navbar">
+			      <ul>
+			        <li><a href="#" data-icon="home">首页</a></li>
+			        <li><a href="#" data-icon="home">新增商机</a></li>
+			        <li><a href="#" data-icon="arrow-r">统计</a></li>
+			        <li><a href="#" data-icon="search">搜索</a></li>
+			      </ul>
+			    </div>
+		  </div>
+		</div> 
+		
+<div data-role="page" id="pagetwo">
+	
+  <div data-role="header">
+    <h1>商机明细</h1>
+  </div>
+
+  <div data-role="content">
+  	 <h2>宁海县第一人民医院</h2>
+  	<div data-role="collapsible" data-collapsed="false">
+      <h1>先诊疗后付费（银联）</h1>
+      <p>预算：100万</p>
+      <p>预期: 2015-12月</p>
+      <p>采购方式：单一来源采购</p>
+      <p>成单概率：80%</p>
+    </div>
+
+
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider">2015 年 1 月 3 日，星期三 <span class="ui-li-count">2</span></li>   
+      <li><a href="#">   
+        <h2>信息科长</h2>
+        <p><b>张国平</b></p>
+        <p>沟通了医院目前的现状和建设规划</p>
+        <p>现有HIS、LIS系统架构落后，升级困难</p>
+        <p>医院计划今年投入100万做信息化升级</p>
+        <p>主要是门诊诊间系统等</p>
+        <p class="ui-li-aside">协同人员: 产品经理</p></a>
+      </li>
+      
+      
+      <li data-role="list-divider">2013 年 1 月 5 日，星期一 <span class="ui-li-count">1</span></li>   
+      <li><a href="#">   
+        <h2>信息科</h2>
+        <p><b>初次拜访</b></p>
+        <p>介绍了我们公司的产品和历史</p>
+        <p class="ui-li-aside">协同人员：无</p></a>
+      </li>
+    </ul>
+
+  </div>
+
+   <div data-role="footer" data-position="fixed">
+		        <div data-role="navbar">
+			      <ul>
+			        <li><a href="#" data-icon="home">首页</a></li>			        			        
+			        <li><a href="#pagethree" data-icon="grid">更新商机</a></li>
+			        <li><a href="#" data-icon="back">商机列表</a></li>
+			      </ul>
+			    </div>
+	</div>
+</div> 
+		
+<div data-role="page" id="pagethree">
+  <div data-role="header">
+  <h1>新增商机</h1>
+  </div>
+
+<div data-role="content">
+<form method="post" action="">
+
+  <div data-role="fieldcontain">
+    <label for="search">客户名称：</label>
+    <input type="text" name="text" id="name" value="" placeholder="客户名称？">
+    </div>
+    
+    <div data-role="fieldcontain">
+    <label for="search">商机类别</label>
+      <select id="colors" name="colors">
+      <option value="red">HIS</option>
+      <option value="green">电子病历</option>
+      <option value="blue">集成平台</option>
+    </select>
+  </div>
+
+<div data-role="fieldcontain">
+  <label for="textarea-6">商机内容:</label>
+  <textarea cols="40" rows="8" name="textarea" id="textarea" data-mini="true" placeholder="商机内容"></textarea>
+</div>  
+
+  <div data-role="fieldcontain">
+    <label for="date">成单日期</label>
+    <input type="text" data-role="date">    
+  </div>
+  
+  <div data-role="fieldcontain">
+    <label for="step">当前进度：</label>
+    <select id="step" name="step">
+      <option value="red">发现商机</option>
+	  <option value="red">客户拜访</option>      
+      <option value="red">技术认可</option>
+      <option value="green">商务认可</option>
+      <option value="blue">获得承诺</option>
+	  <option value="blue">招投标</option>      
+    </select>
+ 
+  <div data-role="fieldcontain">
+    <label for="switch">结单：</label>
+    <select name="switch" id="switch" data-role="slider">
+      <option value="on">yes</option>
+      <option value="off">no</option>
+    </select>
+  </div>
+  
+   <div data-role="controlgroup">
+   <legend>竞争对手：</legend>
+   <label for="mov1">创业</label>
+   <input type="checkbox" name="mov1" id="mov1" />
+   <label for="mov2">东软</label>
+   <input type="checkbox" name="mov2" id="mov2" />
+   <label for="mov3">卫宁</label>
+   <input type="checkbox" name="mov3" id="mov3" />
+   </div>
+   </div>
+  
+</form>
+</div>
+</div>
+
+
+	</body>
+</html>

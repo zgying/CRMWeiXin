@@ -1,0 +1,13 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Empty.master.cs" Inherits="Web.App_Master.Empty" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AzureCredentials>Windows Azure MSDN - Visual Studio Ultimate - VESSEA</AzureCredentials>
+    <AzureHostedServiceName>vessea</AzureHostedServiceName>
+    <AzureHostedServiceLabel>VESSEA</AzureHostedServiceLabel>
+    <AzureSlot>Production</AzureSlot>
+    <AzureEnableIntelliTrace>False</AzureEnableIntelliTrace>
+    <AzureEnableProfiling>False</AzureEnableProfiling>
+    <AzureEnableWebDeploy>True</AzureEnableWebDeploy>
+    <AzureStorageAccountName>vessea</AzureStorageAccountName>
+    <AzureStorageAccountLabel>VESSEA</AzureStorageAccountLabel>
+    <AzureDeploymentLabel>WindowsAzureVESSEA</AzureDeploymentLabel>
+    <AzureSolutionConfiguration>Release</AzureSolutionConfiguration>
+    <AzureServiceConfiguration>Cloud</AzureServiceConfiguration>
+    <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
+    <AzureEnableRemoteDesktop>True</AzureEnableRemoteDesktop>
+    <AzureDeploymentReplacementMethod>AutomaticUpgrade</AzureDeploymentReplacementMethod>
+    <AzureDeleteDeploymentOnFailure>False</AzureDeleteDeploymentOnFailure>
+    <AzureFallbackToDeleteAndRecreateIfUpgradeFails>False</AzureFallbackToDeleteAndRecreateIfUpgradeFails>
+  </PropertyGroup>
+</Project>

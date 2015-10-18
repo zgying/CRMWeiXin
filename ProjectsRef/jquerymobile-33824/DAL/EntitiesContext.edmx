@@ -1,0 +1,1439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DAL.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DALStoreContainer">
+          <EntitySet Name="Content" EntityType="DAL.Store.Content" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentFiles" EntityType="DAL.Store.ContentFiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentType" EntityType="DAL.Store.ContentType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ELMAH_Error" EntityType="DAL.Store.ELMAH_Error" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IPN" EntityType="DAL.Store.IPN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PortalAlias" EntityType="DAL.Store.PortalAlias" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Portals" EntityType="DAL.Store.Portals" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="DAL.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteLog" EntityType="DAL.Store.SiteLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreCart" EntityType="DAL.Store.StoreCart" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreCartItems" EntityType="DAL.Store.StoreCartItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreCategory" EntityType="DAL.Store.StoreCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreProduct" EntityType="DAL.Store.StoreProduct" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreVariantGroups" EntityType="DAL.Store.StoreVariantGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreVariants" EntityType="DAL.Store.StoreVariants" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreVariantTypes" EntityType="DAL.Store.StoreVariantTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SurveyAnswerGroups" EntityType="DAL.Store.SurveyAnswerGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SurveyAnswers" EntityType="DAL.Store.SurveyAnswers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SurveyAnswersTypes" EntityType="DAL.Store.SurveyAnswersTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SurveyQuestions" EntityType="DAL.Store.SurveyQuestions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SurveyResultItems" EntityType="DAL.Store.SurveyResultItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SurveyResults" EntityType="DAL.Store.SurveyResults" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Surveys" EntityType="DAL.Store.Surveys" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tags" EntityType="DAL.Store.Tags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TaxRate" EntityType="DAL.Store.TaxRate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="DAL.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersInRoles" EntityType="DAL.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="ContentID" />
+          </Key>
+          <Property Name="ContentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="URL" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="ContentTypeID" Type="int" Nullable="false" />
+          <Property Name="ContentText" Type="text" />
+          <Property Name="IsPublished" Type="bit" />
+          <Property Name="IsMenu" Type="bit" />
+          <Property Name="StartMethod" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ContentFiles">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="MimeType" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDirectory" Type="bit" Nullable="false" />
+          <Property Name="Size" Type="int" />
+          <Property Name="FileContent" Type="image" />
+          <Property Name="upsize_ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="ContentType">
+          <Key>
+            <PropertyRef Name="ContentTypeID" />
+          </Key>
+          <Property Name="ContentTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ELMAH_Error">
+          <Key>
+            <PropertyRef Name="ErrorId" />
+          </Key>
+          <Property Name="ErrorId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Application" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="Host" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Source" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="Message" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="User" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StatusCode" Type="int" Nullable="false" />
+          <Property Name="TimeUtc" Type="datetime" Nullable="false" />
+          <Property Name="Sequence" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AllXml" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IPN">
+          <Key>
+            <PropertyRef Name="IPNID" />
+          </Key>
+          <Property Name="IPNID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="Environment" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ResponseIN" Type="text" Nullable="false" />
+          <Property Name="ResponseParsed" Type="bit" />
+          <Property Name="txn_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="mc_gross" Type="decimal" Scale="2" />
+          <Property Name="tax" Type="decimal" Scale="2" />
+          <Property Name="protection_eligibility" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="payer_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_street" Type="nvarchar" MaxLength="50" />
+          <Property Name="payment_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="payment_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="charset" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_zip" Type="numeric" />
+          <Property Name="mc_fee" Type="decimal" Scale="2" />
+          <Property Name="address_country_code" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="notify_version" Type="decimal" Scale="2" />
+          <Property Name="custom" Type="nvarchar" MaxLength="256" />
+          <Property Name="payer_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="business" Type="nvarchar" MaxLength="200" />
+          <Property Name="address_country" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_city" Type="nvarchar" MaxLength="50" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="verify_sign" Type="nvarchar" MaxLength="256" />
+          <Property Name="payer_email" Type="nvarchar" MaxLength="200" />
+          <Property Name="payment_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="address_state" Type="nvarchar" MaxLength="50" />
+          <Property Name="receiver_email" Type="nvarchar" MaxLength="200" />
+          <Property Name="payment_fee" Type="decimal" Scale="2" />
+          <Property Name="receiver_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="txn_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="mc_currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="item_number" Type="nvarchar" MaxLength="50" />
+          <Property Name="residence_country" Type="nvarchar" MaxLength="50" />
+          <Property Name="test_ipn" Type="nvarchar" MaxLength="50" />
+          <Property Name="handling_amount" Type="decimal" Scale="2" />
+          <Property Name="transaction_subject" Type="nvarchar" MaxLength="256" />
+          <Property Name="payment_gross" Type="decimal" Scale="2" />
+          <Property Name="shipping" Type="decimal" Scale="2" />
+          <Property Name="ipn_track_id" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PortalAlias">
+          <Key>
+            <PropertyRef Name="PortalAliasID" />
+          </Key>
+          <Property Name="PortalAliasID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="HTTPAlias" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="LastModifiedByUserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Portals">
+          <Key>
+            <PropertyRef Name="PortalID" />
+          </Key>
+          <Property Name="PortalID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="LastModifiedByUserID" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MasterPage" Type="nvarchar" MaxLength="50" />
+          <Property Name="Theme" Type="nvarchar" MaxLength="50" />
+          <Property Name="UrlRedirect" Type="nvarchar" MaxLength="255" />
+          <Property Name="FacebookAppID" Type="nvarchar" MaxLength="20" />
+          <Property Name="FacebookSecret" Type="nvarchar" MaxLength="50" />
+          <Property Name="PayPalEnvironment" Type="bit" />
+          <Property Name="PayPalBusiness" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailHost" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailPort" Type="nchar" MaxLength="10" />
+          <Property Name="EmailUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailPass" Type="nvarchar" MaxLength="250" />
+          <Property Name="EmailPassSalt" Type="nvarchar" MaxLength="250" />
+          <Property Name="EmailSSL" Type="bit" />
+          <Property Name="GoogleAnalytics" Type="text" />
+          <Property Name="RobotsText" Type="text" />
+          <Property Name="StartMethod" Type="nvarchar" MaxLength="255" />
+          <Property Name="TaxRate" Type="real" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SiteLog">
+          <Key>
+            <PropertyRef Name="SiteLogID" />
+          </Key>
+          <Property Name="SiteLogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Ajax" Type="bit" />
+          <Property Name="Host" Type="nvarchar" MaxLength="255" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="RequestRequestType" Type="nvarchar" MaxLength="255" />
+          <Property Name="RequestUserHostAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="RequestUserHostName" Type="nvarchar" MaxLength="255" />
+          <Property Name="RequestHttpMethod" Type="nvarchar" MaxLength="20" />
+          <Property Name="ClientHeight" Type="int" />
+          <Property Name="ClientWidth" Type="int" />
+          <Property Name="Browser" Type="nvarchar" MaxLength="20" />
+          <Property Name="BrowserType" Type="nvarchar" MaxLength="20" />
+          <Property Name="BrowserVersion" Type="decimal" Scale="1" />
+          <Property Name="BrowserMajorVersion" Type="int" />
+          <Property Name="BrowserPlatform" Type="nvarchar" MaxLength="20" />
+          <Property Name="BrowserCrawler" Type="bit" />
+          <Property Name="BrowserFrames" Type="bit" />
+          <Property Name="BrowserTables" Type="bit" />
+          <Property Name="BrowserCookies" Type="bit" />
+          <Property Name="BrowserVBScript" Type="bit" />
+          <Property Name="BrowserEcmaScriptVersion" Type="decimal" Scale="1" />
+          <Property Name="BrowserJavaApplets" Type="bit" />
+          <Property Name="BrowserActiveXControls" Type="bit" />
+          <Property Name="BrowserJavaScriptVersion" Type="decimal" Scale="1" />
+        </EntityType>
+        <EntityType Name="StoreCart">
+          <Key>
+            <PropertyRef Name="CartID" />
+          </Key>
+          <Property Name="CartID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="SubTotal" Type="money" />
+          <Property Name="Tax" Type="money" />
+          <Property Name="Total" Type="money" />
+        </EntityType>
+        <EntityType Name="StoreCartItems">
+          <Key>
+            <PropertyRef Name="CartItemID" />
+          </Key>
+          <Property Name="CartItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CartID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="TaxRate" Type="real" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="SubTotal" Type="money" Nullable="false" />
+          <Property Name="Tax" Type="money" Nullable="false" />
+          <Property Name="Total" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StoreCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ParentCategoryId" Type="int" />
+          <Property Name="IsMenu" Type="bit" />
+          <Property Name="Deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="StoreProduct">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PortalID" Type="int" />
+          <Property Name="DisplayOrder" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="text" />
+          <Property Name="Published" Type="bit" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Price" Type="money" />
+        </EntityType>
+        <EntityType Name="StoreVariantGroups">
+          <Key>
+            <PropertyRef Name="VariantGroupID" />
+          </Key>
+          <Property Name="VariantGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="VariantTypeID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StoreVariants">
+          <Key>
+            <PropertyRef Name="VariantID" />
+          </Key>
+          <Property Name="VariantID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="VariantGroupID" Type="int" Nullable="false" />
+          <Property Name="Variant" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StoreVariantTypes">
+          <Key>
+            <PropertyRef Name="AnswerTypeID" />
+          </Key>
+          <Property Name="AnswerTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SurveyAnswerGroups">
+          <Key>
+            <PropertyRef Name="AnswerGroupID" />
+          </Key>
+          <Property Name="AnswerGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="AnswerTypeID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SurveyAnswers">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="AnswerGroupID" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SurveyAnswersTypes">
+          <Key>
+            <PropertyRef Name="SurveyAnswerTypeID" />
+          </Key>
+          <Property Name="SurveyAnswerTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SurveyQuestions">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="SurveyID" Type="int" Nullable="false" />
+          <Property Name="AnswerGroupID" Type="int" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SurveyResultItems">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ResultID" Type="int" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="QuestionID" Type="int" Nullable="false" />
+          <Property Name="AnswerID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="AnswerText" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SurveyResults">
+          <Key>
+            <PropertyRef Name="ResultID" />
+          </Key>
+          <Property Name="ResultID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Surveys">
+          <Key>
+            <PropertyRef Name="SurveyID" />
+          </Key>
+          <Property Name="SurveyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tags">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="ContentID" Type="int" Nullable="false" />
+          <Property Name="Tag" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TaxRate">
+          <Key>
+            <PropertyRef Name="TaxRateID" />
+          </Key>
+          <Property Name="TaxRateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Rate" Type="decimal" Nullable="false" Scale="2" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IsSuperUser" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="FacebookID" Type="nvarchar" MaxLength="255" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="Local" Type="nvarchar" MaxLength="20" />
+          <Property Name="Link" Type="nvarchar" MaxLength="255" />
+          <Property Name="TimeZone" Type="int" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="255" />
+          <Property Name="LocationID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="60" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Region" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nchar" MaxLength="15" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="AltPhone" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UsersInRoles">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="PortalID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="ELMAH_GetErrorsXml" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Application" Type="nvarchar" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="TotalCount" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="ELMAH_GetErrorXml" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Application" Type="nvarchar" Mode="In" />
+          <Parameter Name="ErrorId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="ELMAH_LogError" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ErrorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Application" Type="nvarchar" Mode="In" />
+          <Parameter Name="Host" Type="nvarchar" Mode="In" />
+          <Parameter Name="Type" Type="nvarchar" Mode="In" />
+          <Parameter Name="Source" Type="nvarchar" Mode="In" />
+          <Parameter Name="Message" Type="nvarchar" Mode="In" />
+          <Parameter Name="User" Type="nvarchar" Mode="In" />
+          <Parameter Name="AllXml" Type="ntext" Mode="In" />
+          <Parameter Name="StatusCode" Type="int" Mode="In" />
+          <Parameter Name="TimeUtc" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="usp_GetUserRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_StoreInsertCartItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CartID" Type="int" Mode="In" />
+          <Parameter Name="Qty" Type="int" Mode="In" />
+          <Parameter Name="ProductID" Type="int" Mode="In" />
+          <Parameter Name="PortalID" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DAL" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="EntitiesContext" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="usp_GetUserRoles" ReturnType="Collection(DAL.usp_GetUserRoles_Result)">
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_StoreInsertCartItem">
+            <Parameter Name="CartID" Mode="In" Type="Int32" />
+            <Parameter Name="Qty" Mode="In" Type="Int32" />
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+            <Parameter Name="PortalID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Contents" EntityType="DAL.Content" />
+          <EntitySet Name="ContentFiles" EntityType="DAL.ContentFile" />
+          <EntitySet Name="ContentTypes" EntityType="DAL.ContentType" />
+          <EntitySet Name="ELMAH_Error" EntityType="DAL.ELMAH_Error" />
+          <EntitySet Name="IPNs" EntityType="DAL.IPN" />
+          <EntitySet Name="PortalAlias" EntityType="DAL.PortalAlia" />
+          <EntitySet Name="Portals" EntityType="DAL.Portal" />
+          <EntitySet Name="Roles" EntityType="DAL.Role" />
+          <EntitySet Name="SiteLogs" EntityType="DAL.SiteLog" />
+          <EntitySet Name="StoreCarts" EntityType="DAL.StoreCart" />
+          <EntitySet Name="StoreCartItems" EntityType="DAL.StoreCartItem" />
+          <EntitySet Name="StoreCategories" EntityType="DAL.StoreCategory" />
+          <EntitySet Name="StoreProducts" EntityType="DAL.StoreProduct" />
+          <EntitySet Name="StoreVariantGroups" EntityType="DAL.StoreVariantGroup" />
+          <EntitySet Name="StoreVariants" EntityType="DAL.StoreVariant" />
+          <EntitySet Name="StoreVariantTypes" EntityType="DAL.StoreVariantType" />
+          <EntitySet Name="SurveyAnswerGroups" EntityType="DAL.SurveyAnswerGroup" />
+          <EntitySet Name="SurveyAnswers" EntityType="DAL.SurveyAnswer" />
+          <EntitySet Name="SurveyAnswersTypes" EntityType="DAL.SurveyAnswersType" />
+          <EntitySet Name="SurveyQuestions" EntityType="DAL.SurveyQuestion" />
+          <EntitySet Name="SurveyResultItems" EntityType="DAL.SurveyResultItem" />
+          <EntitySet Name="SurveyResults" EntityType="DAL.SurveyResult" />
+          <EntitySet Name="Surveys" EntityType="DAL.Survey" />
+          <EntitySet Name="Tags" EntityType="DAL.Tag" />
+          <EntitySet Name="TaxRates" EntityType="DAL.TaxRate" />
+          <EntitySet Name="Users" EntityType="DAL.User" />
+          <EntitySet Name="UsersInRoles" EntityType="DAL.UsersInRole" />
+          </EntityContainer>
+        <ComplexType Name="usp_GetUserRoles_Result">
+          <Property Type="Int32" Name="RoleID" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="ContentID" />
+          </Key>
+          <Property Type="Int32" Name="ContentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="URL" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ContentTypeID" Nullable="false" />
+          <Property Type="String" Name="ContentText" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsPublished" />
+          <Property Type="Boolean" Name="IsMenu" />
+          <Property Type="String" Name="StartMethod" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ContentFile">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Type="Int32" Name="FileID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="ParentID" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MimeType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDirectory" Nullable="false" />
+          <Property Type="Int32" Name="Size" />
+          <Property Type="Binary" Name="FileContent" MaxLength="Max" FixedLength="false" />
+          <Property Type="Binary" Name="upsize_ts" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="ContentType">
+          <Key>
+            <PropertyRef Name="ContentTypeID" />
+          </Key>
+          <Property Type="Int32" Name="ContentTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ELMAH_Error">
+          <Key>
+            <PropertyRef Name="ErrorId" />
+          </Key>
+          <Property Type="Guid" Name="ErrorId" Nullable="false" />
+          <Property Type="String" Name="Application" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Host" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Message" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="User" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="StatusCode" Nullable="false" />
+          <Property Type="DateTime" Name="TimeUtc" Nullable="false" />
+          <Property Type="Int32" Name="Sequence" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AllXml" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IPN">
+          <Key>
+            <PropertyRef Name="IPNID" />
+          </Key>
+          <Property Type="Int32" Name="IPNID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastUpdated" />
+          <Property Type="String" Name="Environment" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ResponseIN" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ResponseParsed" />
+          <Property Type="String" Name="txn_id" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="mc_gross" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="tax" Precision="18" Scale="2" />
+          <Property Type="String" Name="protection_eligibility" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address_status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="payer_id" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="first_name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="last_name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address_street" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="payment_date" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="payment_status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="charset" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="address_zip" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="mc_fee" Precision="18" Scale="2" />
+          <Property Type="String" Name="address_country_code" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address_name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="notify_version" Precision="18" Scale="2" />
+          <Property Type="String" Name="custom" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="payer_status" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="business" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address_country" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address_city" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="quantity" />
+          <Property Type="String" Name="verify_sign" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="payer_email" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="payment_type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address_state" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="receiver_email" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="payment_fee" Precision="18" Scale="2" />
+          <Property Type="String" Name="receiver_id" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="txn_type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="item_name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mc_currency" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="item_number" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="residence_country" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="test_ipn" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="handling_amount" Precision="18" Scale="2" />
+          <Property Type="String" Name="transaction_subject" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="payment_gross" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="shipping" Precision="18" Scale="2" />
+          <Property Type="String" Name="ipn_track_id" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PortalAlia">
+          <Key>
+            <PropertyRef Name="PortalAliasID" />
+          </Key>
+          <Property Type="Int32" Name="PortalAliasID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="String" Name="HTTPAlias" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastUpdated" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <Property Type="Int32" Name="LastModifiedByUserID" />
+        </EntityType>
+        <EntityType Name="Portal">
+          <Key>
+            <PropertyRef Name="PortalID" />
+          </Key>
+          <Property Type="Int32" Name="PortalID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastUpdated" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <Property Type="Int32" Name="LastModifiedByUserID" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MasterPage" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Theme" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UrlRedirect" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FacebookAppID" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FacebookSecret" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="PayPalEnvironment" />
+          <Property Type="String" Name="PayPalBusiness" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailHost" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailPort" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="EmailUser" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailPass" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailPassSalt" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="EmailSSL" />
+          <Property Type="String" Name="GoogleAnalytics" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RobotsText" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StartMethod" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Single" Name="TaxRate" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Type="Int32" Name="RoleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SiteLog">
+          <Key>
+            <PropertyRef Name="SiteLogID" />
+          </Key>
+          <Property Type="Int32" Name="SiteLogID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="Boolean" Name="Ajax" />
+          <Property Type="String" Name="Host" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RequestRequestType" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RequestUserHostAddress" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RequestUserHostName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RequestHttpMethod" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ClientHeight" />
+          <Property Type="Int32" Name="ClientWidth" />
+          <Property Type="String" Name="Browser" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BrowserType" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="BrowserVersion" Precision="18" Scale="1" />
+          <Property Type="Int32" Name="BrowserMajorVersion" />
+          <Property Type="String" Name="BrowserPlatform" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="BrowserCrawler" />
+          <Property Type="Boolean" Name="BrowserFrames" />
+          <Property Type="Boolean" Name="BrowserTables" />
+          <Property Type="Boolean" Name="BrowserCookies" />
+          <Property Type="Boolean" Name="BrowserVBScript" />
+          <Property Type="Decimal" Name="BrowserEcmaScriptVersion" Precision="18" Scale="1" />
+          <Property Type="Boolean" Name="BrowserJavaApplets" />
+          <Property Type="Boolean" Name="BrowserActiveXControls" />
+          <Property Type="Decimal" Name="BrowserJavaScriptVersion" Precision="18" Scale="1" />
+        </EntityType>
+        <EntityType Name="StoreCart">
+          <Key>
+            <PropertyRef Name="CartID" />
+          </Key>
+          <Property Type="Int32" Name="CartID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="Decimal" Name="SubTotal" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Tax" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Total" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="StoreCartItem">
+          <Key>
+            <PropertyRef Name="CartItemID" />
+          </Key>
+          <Property Type="Int32" Name="CartItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="CartID" Nullable="false" />
+          <Property Type="Int32" Name="ProductID" Nullable="false" />
+          <Property Type="Single" Name="TaxRate" Nullable="false" />
+          <Property Type="Int32" Name="Qty" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="SubTotal" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Tax" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="StoreCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Type="Int32" Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ParentCategoryId" />
+          <Property Type="Boolean" Name="IsMenu" />
+          <Property Type="Boolean" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="StoreProduct">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Type="Int32" Name="ProductID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PortalID" />
+          <Property Type="Int32" Name="DisplayOrder" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="Int32" Name="CategoryID" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Published" />
+          <Property Type="Boolean" Name="Deleted" />
+          <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="StoreVariantGroup">
+          <Key>
+            <PropertyRef Name="VariantGroupID" />
+          </Key>
+          <Property Type="Int32" Name="VariantGroupID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="VariantTypeID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StoreVariant">
+          <Key>
+            <PropertyRef Name="VariantID" />
+          </Key>
+          <Property Type="Int32" Name="VariantID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+          <Property Type="Int32" Name="VariantGroupID" Nullable="false" />
+          <Property Type="String" Name="Variant" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StoreVariantType">
+          <Key>
+            <PropertyRef Name="AnswerTypeID" />
+          </Key>
+          <Property Type="Int32" Name="AnswerTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SurveyAnswerGroup">
+          <Key>
+            <PropertyRef Name="AnswerGroupID" />
+          </Key>
+          <Property Type="Int32" Name="AnswerGroupID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="AnswerTypeID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SurveyAnswer">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Type="Int32" Name="AnswerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+          <Property Type="Int32" Name="AnswerGroupID" Nullable="false" />
+          <Property Type="String" Name="Answer" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SurveyAnswersType">
+          <Key>
+            <PropertyRef Name="SurveyAnswerTypeID" />
+          </Key>
+          <Property Type="Int32" Name="SurveyAnswerTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SurveyQuestion">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Type="Int32" Name="QuestionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+          <Property Type="Int32" Name="SurveyID" Nullable="false" />
+          <Property Type="Int32" Name="AnswerGroupID" Nullable="false" />
+          <Property Type="String" Name="Question" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SurveyResultItem">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ResultID" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="QuestionID" Nullable="false" />
+          <Property Type="Int32" Name="AnswerID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="AnswerText" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SurveyResult">
+          <Key>
+            <PropertyRef Name="ResultID" />
+          </Key>
+          <Property Type="Int32" Name="ResultID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Survey">
+          <Key>
+            <PropertyRef Name="SurveyID" />
+          </Key>
+          <Property Type="Int32" Name="SurveyID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Type="Int32" Name="TagID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="ContentID" Nullable="false" />
+          <Property Type="String" Name="Tag1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TaxRate">
+          <Key>
+            <PropertyRef Name="TaxRateID" />
+          </Key>
+          <Property Type="Int32" Name="TaxRateID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Rate" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Boolean" Name="IsSuperUser" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="LastLoginDate" Nullable="false" />
+          <Property Type="String" Name="FacebookID" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FullName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MiddleName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gender" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Local" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Link" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TimeZone" />
+          <Property Type="DateTime" Name="Birthday" />
+          <Property Type="String" Name="Picture" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LocationID" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Region" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostalCode" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Telephone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AltPhone" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UsersInRole">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Type="Int32" Name="RecID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PortalID" Nullable="false" />
+          <Property Type="Int32" Name="RoleID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DALStoreContainer" CdmEntityContainer="EntitiesContext">
+          <FunctionImportMapping FunctionImportName="usp_GetUserRoles" FunctionName="DAL.Store.usp_GetUserRoles">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DAL.usp_GetUserRoles_Result">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_StoreInsertCartItem" FunctionName="DAL.Store.usp_StoreInsertCartItem" />
+          <EntitySetMapping Name="Contents">
+            <EntityTypeMapping TypeName="DAL.Content">
+              <MappingFragment StoreEntitySet="Content">
+                <ScalarProperty Name="StartMethod" ColumnName="StartMethod" />
+                <ScalarProperty Name="IsMenu" ColumnName="IsMenu" />
+                <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+                <ScalarProperty Name="ContentText" ColumnName="ContentText" />
+                <ScalarProperty Name="ContentTypeID" ColumnName="ContentTypeID" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentFiles">
+            <EntityTypeMapping TypeName="DAL.ContentFile">
+              <MappingFragment StoreEntitySet="ContentFiles">
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="IsDirectory" ColumnName="IsDirectory" />
+                <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentTypes">
+            <EntityTypeMapping TypeName="DAL.ContentType">
+              <MappingFragment StoreEntitySet="ContentType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContentTypeID" ColumnName="ContentTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ELMAH_Error">
+            <EntityTypeMapping TypeName="DAL.ELMAH_Error">
+              <MappingFragment StoreEntitySet="ELMAH_Error">
+                <ScalarProperty Name="AllXml" ColumnName="AllXml" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="TimeUtc" ColumnName="TimeUtc" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Host" ColumnName="Host" />
+                <ScalarProperty Name="Application" ColumnName="Application" />
+                <ScalarProperty Name="ErrorId" ColumnName="ErrorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IPNs">
+            <EntityTypeMapping TypeName="DAL.IPN">
+              <MappingFragment StoreEntitySet="IPN">
+                <ScalarProperty Name="ipn_track_id" ColumnName="ipn_track_id" />
+                <ScalarProperty Name="shipping" ColumnName="shipping" />
+                <ScalarProperty Name="payment_gross" ColumnName="payment_gross" />
+                <ScalarProperty Name="transaction_subject" ColumnName="transaction_subject" />
+                <ScalarProperty Name="handling_amount" ColumnName="handling_amount" />
+                <ScalarProperty Name="test_ipn" ColumnName="test_ipn" />
+                <ScalarProperty Name="residence_country" ColumnName="residence_country" />
+                <ScalarProperty Name="item_number" ColumnName="item_number" />
+                <ScalarProperty Name="mc_currency" ColumnName="mc_currency" />
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+                <ScalarProperty Name="txn_type" ColumnName="txn_type" />
+                <ScalarProperty Name="receiver_id" ColumnName="receiver_id" />
+                <ScalarProperty Name="payment_fee" ColumnName="payment_fee" />
+                <ScalarProperty Name="receiver_email" ColumnName="receiver_email" />
+                <ScalarProperty Name="address_state" ColumnName="address_state" />
+                <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+                <ScalarProperty Name="payer_email" ColumnName="payer_email" />
+                <ScalarProperty Name="verify_sign" ColumnName="verify_sign" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="address_city" ColumnName="address_city" />
+                <ScalarProperty Name="address_country" ColumnName="address_country" />
+                <ScalarProperty Name="business" ColumnName="business" />
+                <ScalarProperty Name="payer_status" ColumnName="payer_status" />
+                <ScalarProperty Name="custom" ColumnName="custom" />
+                <ScalarProperty Name="notify_version" ColumnName="notify_version" />
+                <ScalarProperty Name="address_name" ColumnName="address_name" />
+                <ScalarProperty Name="address_country_code" ColumnName="address_country_code" />
+                <ScalarProperty Name="mc_fee" ColumnName="mc_fee" />
+                <ScalarProperty Name="address_zip" ColumnName="address_zip" />
+                <ScalarProperty Name="charset" ColumnName="charset" />
+                <ScalarProperty Name="payment_status" ColumnName="payment_status" />
+                <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+                <ScalarProperty Name="address_street" ColumnName="address_street" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="payer_id" ColumnName="payer_id" />
+                <ScalarProperty Name="address_status" ColumnName="address_status" />
+                <ScalarProperty Name="protection_eligibility" ColumnName="protection_eligibility" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="mc_gross" ColumnName="mc_gross" />
+                <ScalarProperty Name="txn_id" ColumnName="txn_id" />
+                <ScalarProperty Name="ResponseParsed" ColumnName="ResponseParsed" />
+                <ScalarProperty Name="ResponseIN" ColumnName="ResponseIN" />
+                <ScalarProperty Name="Environment" ColumnName="Environment" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IPNID" ColumnName="IPNID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PortalAlias">
+            <EntityTypeMapping TypeName="DAL.PortalAlia">
+              <MappingFragment StoreEntitySet="PortalAlias">
+                <ScalarProperty Name="LastModifiedByUserID" ColumnName="LastModifiedByUserID" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="HTTPAlias" ColumnName="HTTPAlias" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PortalAliasID" ColumnName="PortalAliasID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Portals">
+            <EntityTypeMapping TypeName="DAL.Portal">
+              <MappingFragment StoreEntitySet="Portals">
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="StartMethod" ColumnName="StartMethod" />
+                <ScalarProperty Name="RobotsText" ColumnName="RobotsText" />
+                <ScalarProperty Name="GoogleAnalytics" ColumnName="GoogleAnalytics" />
+                <ScalarProperty Name="EmailSSL" ColumnName="EmailSSL" />
+                <ScalarProperty Name="EmailPassSalt" ColumnName="EmailPassSalt" />
+                <ScalarProperty Name="EmailPass" ColumnName="EmailPass" />
+                <ScalarProperty Name="EmailUser" ColumnName="EmailUser" />
+                <ScalarProperty Name="EmailPort" ColumnName="EmailPort" />
+                <ScalarProperty Name="EmailHost" ColumnName="EmailHost" />
+                <ScalarProperty Name="PayPalBusiness" ColumnName="PayPalBusiness" />
+                <ScalarProperty Name="PayPalEnvironment" ColumnName="PayPalEnvironment" />
+                <ScalarProperty Name="FacebookSecret" ColumnName="FacebookSecret" />
+                <ScalarProperty Name="FacebookAppID" ColumnName="FacebookAppID" />
+                <ScalarProperty Name="UrlRedirect" ColumnName="UrlRedirect" />
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+                <ScalarProperty Name="MasterPage" ColumnName="MasterPage" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastModifiedByUserID" ColumnName="LastModifiedByUserID" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="DAL.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteLogs">
+            <EntityTypeMapping TypeName="DAL.SiteLog">
+              <MappingFragment StoreEntitySet="SiteLog">
+                <ScalarProperty Name="BrowserJavaScriptVersion" ColumnName="BrowserJavaScriptVersion" />
+                <ScalarProperty Name="BrowserActiveXControls" ColumnName="BrowserActiveXControls" />
+                <ScalarProperty Name="BrowserJavaApplets" ColumnName="BrowserJavaApplets" />
+                <ScalarProperty Name="BrowserEcmaScriptVersion" ColumnName="BrowserEcmaScriptVersion" />
+                <ScalarProperty Name="BrowserVBScript" ColumnName="BrowserVBScript" />
+                <ScalarProperty Name="BrowserCookies" ColumnName="BrowserCookies" />
+                <ScalarProperty Name="BrowserTables" ColumnName="BrowserTables" />
+                <ScalarProperty Name="BrowserFrames" ColumnName="BrowserFrames" />
+                <ScalarProperty Name="BrowserCrawler" ColumnName="BrowserCrawler" />
+                <ScalarProperty Name="BrowserPlatform" ColumnName="BrowserPlatform" />
+                <ScalarProperty Name="BrowserMajorVersion" ColumnName="BrowserMajorVersion" />
+                <ScalarProperty Name="BrowserVersion" ColumnName="BrowserVersion" />
+                <ScalarProperty Name="BrowserType" ColumnName="BrowserType" />
+                <ScalarProperty Name="Browser" ColumnName="Browser" />
+                <ScalarProperty Name="ClientWidth" ColumnName="ClientWidth" />
+                <ScalarProperty Name="ClientHeight" ColumnName="ClientHeight" />
+                <ScalarProperty Name="RequestHttpMethod" ColumnName="RequestHttpMethod" />
+                <ScalarProperty Name="RequestUserHostName" ColumnName="RequestUserHostName" />
+                <ScalarProperty Name="RequestUserHostAddress" ColumnName="RequestUserHostAddress" />
+                <ScalarProperty Name="RequestRequestType" ColumnName="RequestRequestType" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Host" ColumnName="Host" />
+                <ScalarProperty Name="Ajax" ColumnName="Ajax" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="SiteLogID" ColumnName="SiteLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreCarts">
+            <EntityTypeMapping TypeName="DAL.StoreCart">
+              <MappingFragment StoreEntitySet="StoreCart">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CartID" ColumnName="CartID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreCartItems">
+            <EntityTypeMapping TypeName="DAL.StoreCartItem">
+              <MappingFragment StoreEntitySet="StoreCartItems">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="CartID" ColumnName="CartID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CartItemID" ColumnName="CartItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreCategories">
+            <EntityTypeMapping TypeName="DAL.StoreCategory">
+              <MappingFragment StoreEntitySet="StoreCategory">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="IsMenu" ColumnName="IsMenu" />
+                <ScalarProperty Name="ParentCategoryId" ColumnName="ParentCategoryId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreProducts">
+            <EntityTypeMapping TypeName="DAL.StoreProduct">
+              <MappingFragment StoreEntitySet="StoreProduct">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreVariantGroups">
+            <EntityTypeMapping TypeName="DAL.StoreVariantGroup">
+              <MappingFragment StoreEntitySet="StoreVariantGroups">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="VariantTypeID" ColumnName="VariantTypeID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="VariantGroupID" ColumnName="VariantGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreVariants">
+            <EntityTypeMapping TypeName="DAL.StoreVariant">
+              <MappingFragment StoreEntitySet="StoreVariants">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Variant" ColumnName="Variant" />
+                <ScalarProperty Name="VariantGroupID" ColumnName="VariantGroupID" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="VariantID" ColumnName="VariantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreVariantTypes">
+            <EntityTypeMapping TypeName="DAL.StoreVariantType">
+              <MappingFragment StoreEntitySet="StoreVariantTypes">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AnswerTypeID" ColumnName="AnswerTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SurveyAnswerGroups">
+            <EntityTypeMapping TypeName="DAL.SurveyAnswerGroup">
+              <MappingFragment StoreEntitySet="SurveyAnswerGroups">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AnswerTypeID" ColumnName="AnswerTypeID" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="AnswerGroupID" ColumnName="AnswerGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SurveyAnswers">
+            <EntityTypeMapping TypeName="DAL.SurveyAnswer">
+              <MappingFragment StoreEntitySet="SurveyAnswers">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="AnswerGroupID" ColumnName="AnswerGroupID" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SurveyAnswersTypes">
+            <EntityTypeMapping TypeName="DAL.SurveyAnswersType">
+              <MappingFragment StoreEntitySet="SurveyAnswersTypes">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SurveyAnswerTypeID" ColumnName="SurveyAnswerTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SurveyQuestions">
+            <EntityTypeMapping TypeName="DAL.SurveyQuestion">
+              <MappingFragment StoreEntitySet="SurveyQuestions">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="AnswerGroupID" ColumnName="AnswerGroupID" />
+                <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SurveyResultItems">
+            <EntityTypeMapping TypeName="DAL.SurveyResultItem">
+              <MappingFragment StoreEntitySet="SurveyResultItems">
+                <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SurveyResults">
+            <EntityTypeMapping TypeName="DAL.SurveyResult">
+              <MappingFragment StoreEntitySet="SurveyResults">
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Surveys">
+            <EntityTypeMapping TypeName="DAL.Survey">
+              <MappingFragment StoreEntitySet="Surveys">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="DAL.Tag">
+              <MappingFragment StoreEntitySet="Tags">
+                <ScalarProperty Name="Tag1" ColumnName="Tag" />
+                <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaxRates">
+            <EntityTypeMapping TypeName="DAL.TaxRate">
+              <MappingFragment StoreEntitySet="TaxRate">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="TaxRateID" ColumnName="TaxRateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DAL.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="AltPhone" ColumnName="AltPhone" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Local" ColumnName="Local" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsSuperUser" ColumnName="IsSuperUser" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersInRoles">
+            <EntityTypeMapping TypeName="DAL.UsersInRole">
+              <MappingFragment StoreEntitySet="UsersInRoles">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="PortalID" ColumnName="PortalID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="RecID" ColumnName="RecID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EntitiesContext" ZoomLevel="72">
+        <EntityTypeShape EntityType="DAL.Content" Width="1.5" PointX="0.75" PointY="0.75" Height="3.3263964843750102" />
+        <EntityTypeShape EntityType="DAL.ContentFile" Width="1.5" PointX="2.75" PointY="0.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="DAL.ContentType" Width="1.5" PointX="4.75" PointY="0.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="DAL.ELMAH_Error" Width="1.5" PointX="2.75" PointY="4.75" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="DAL.IPN" Width="1.5" PointX="4.75" PointY="3.75" Height="10.056946614583325" />
+        <EntityTypeShape EntityType="DAL.PortalAlia" Width="1.5" PointX="6.75" PointY="0.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DAL.Portal" Width="1.5" PointX="6.75" PointY="4.75" Height="5.4417122395833246" />
+        <EntityTypeShape EntityType="DAL.Role" Width="1.5" PointX="8.75" PointY="0.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="DAL.SiteLog" Width="1.5" PointX="0.75" PointY="8.75" Height="6.21091796875001" />
+        <EntityTypeShape EntityType="DAL.StoreCart" Width="1.5" PointX="8.75" PointY="3.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DAL.StoreCartItem" Width="1.5" PointX="8.75" PointY="7.75" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="DAL.StoreCategory" Width="1.5" PointX="10.75" PointY="0.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="DAL.StoreProduct" Width="1.5" PointX="10.75" PointY="4.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="DAL.StoreVariantGroup" Width="1.5" PointX="10.75" PointY="8.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DAL.StoreVariant" Width="1.5" PointX="6.75" PointY="11.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DAL.StoreVariantType" Width="1.5" PointX="12.75" PointY="0.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="DAL.SurveyAnswerGroup" Width="1.5" PointX="12.75" PointY="3.75" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="DAL.SurveyAnswer" Width="1.5" PointX="12.75" PointY="6.75" Height="2.1725878906249818" />
+        <EntityTypeShape EntityType="DAL.SurveyAnswersType" Width="1.5" PointX="8.75" PointY="12.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="DAL.SurveyQuestion" Width="1.5" PointX="12.75" PointY="9.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DAL.SurveyResultItem" Width="1.5" PointX="10.75" PointY="13.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="DAL.SurveyResult" Width="1.5" PointX="12.75" PointY="13.75" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="DAL.Survey" Width="1.5" PointX="14.75" PointY="0.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="DAL.Tag" Width="1.5" PointX="2.75" PointY="14.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="DAL.TaxRate" Width="1.5" PointX="14.75" PointY="3.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="DAL.User" Width="1.5" PointX="14.75" PointY="6.75" Height="6.4032194010416674" />
+        <EntityTypeShape EntityType="DAL.UsersInRole" Width="1.5" PointX="14.75" PointY="14.75" Height="1.9802864583333246" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

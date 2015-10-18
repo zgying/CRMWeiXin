@@ -1,0 +1,9 @@
+C:\Users\TANDOGAN\Documents\Visual Studio 2012\Projects\jQueryMobileAutoComplete\jQueryMobileAutoComplete\bin\jQueryMobileAutoComplete.dll
+C:\Users\TANDOGAN\Documents\Visual Studio 2012\Projects\jQueryMobileAutoComplete\jQueryMobileAutoComplete\bin\jQueryMobileAutoComplete.pdb
+C:\Users\TANDOGAN\Documents\Visual Studio 2012\Projects\jQueryMobileAutoComplete\jQueryMobileAutoComplete\obj\Debug\jQueryMobileAutoComplete.dll
+C:\Users\TANDOGAN\Documents\Visual Studio 2012\Projects\jQueryMobileAutoComplete\jQueryMobileAutoComplete\obj\Debug\jQueryMobileAutoComplete.pdb
+D:\GitHub\CRMWeiXin\ProjectsRef\AutoComplete\jQueryMobileAutoComplete\jQueryMobileAutoComplete\bin\jQueryMobileAutoComplete.dll
+D:\GitHub\CRMWeiXin\ProjectsRef\AutoComplete\jQueryMobileAutoComplete\jQueryMobileAutoComplete\bin\jQueryMobileAutoComplete.pdb
+D:\GitHub\CRMWeiXin\ProjectsRef\AutoComplete\jQueryMobileAutoComplete\jQueryMobileAutoComplete\obj\Debug\jQueryMobileAutoComplete.csprojResolveAssemblyReference.cache
+D:\GitHub\CRMWeiXin\ProjectsRef\AutoComplete\jQueryMobileAutoComplete\jQueryMobileAutoComplete\obj\Debug\jQueryMobileAutoComplete.dll
+D:\GitHub\CRMWeiXin\ProjectsRef\AutoComplete\jQueryMobileAutoComplete\jQueryMobileAutoComplete\obj\Debug\jQueryMobileAutoComplete.pdb

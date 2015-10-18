@@ -1,0 +1,125 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4F3D9422-6360-48FC-ABEE-F3C9F39AD7E0}"
+	ProjectSection(SolutionItems) = preProject
+		jQueryMobile.vsmdi = jQueryMobile.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB", "DB\DB.sqlproj", "{E0D0D849-D545-4790-9A57-837919F935F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{2DEE1163-4787-4072-AFFB-E5743D5FB896}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Job", "Job\Job.csproj", "{E43EB419-086C-4D62-9B97-D3AFB270BD33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRoleVESSEA", "WebRoleVESSEA\WebRoleVESSEA.csproj", "{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs25
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BLL\\BLL.csproj
+		SccProjectName1 = BLL
+		SccLocalPath1 = BLL
+		SccProjectUniqueName2 = DAL\\DAL.csproj
+		SccProjectName2 = DAL
+		SccLocalPath2 = DAL
+		SccProjectUniqueName3 = Job\\Job.csproj
+		SccProjectName3 = Job
+		SccLocalPath3 = Job
+		SccProjectUniqueName4 = WebRoleVESSEA\\WebRoleVESSEA.csproj
+		SccProjectName4 = WebRoleVESSEA
+		SccLocalPath4 = WebRoleVESSEA
+		SccProjectUniqueName5 = TestProject\\TestProject.csproj
+		SccProjectName5 = TestProject
+		SccLocalPath5 = TestProject
+		SccProjectUniqueName6 = DB\\DB.sqlproj
+		SccProjectName6 = DB
+		SccLocalPath6 = DB
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = jQueryMobile.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E0D0D849-D545-4790-9A57-837919F935F4}.Release|x86.ActiveCfg = Release|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2DEE1163-4787-4072-AFFB-E5743D5FB896}.Release|x86.ActiveCfg = Release|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8ACCC689-072C-4A2A-884B-EDCABEE93BE5}.Release|x86.ActiveCfg = Release|Any CPU
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Debug|Any CPU.Build.0 = Debug|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Debug|x86.ActiveCfg = Debug|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Debug|x86.Build.0 = Debug|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Release|Any CPU.ActiveCfg = Release|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Release|x86.ActiveCfg = Release|x86
+		{E43EB419-086C-4D62-9B97-D3AFB270BD33}.Release|x86.Build.0 = Release|x86
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E293FC29-BCD1-4F3C-8F58-2751FFD4B9AB}.Release|x86.ActiveCfg = Release|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AB0CB28A-3F7A-4E6C-A05D-77D3D5022A1C}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

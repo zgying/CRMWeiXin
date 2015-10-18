@@ -1,0 +1,4 @@
+C:\Users\TANDOGAN\Documents\Visual Studio 2012\Projects\jQueryMobileAutoComplete\jQueryMobileAutoComplete\bin\jQueryMobileAutoComplete.dll
+C:\Users\TANDOGAN\Documents\Visual Studio 2012\Projects\jQueryMobileAutoComplete\jQueryMobileAutoComplete\bin\jQueryMobileAutoComplete.pdb
+C:\Users\TANDOGAN\Documents\Visual Studio 2012\Projects\jQueryMobileAutoComplete\jQueryMobileAutoComplete\obj\Release\jQueryMobileAutoComplete.dll
+C:\Users\TANDOGAN\Documents\Visual Studio 2012\Projects\jQueryMobileAutoComplete\jQueryMobileAutoComplete\obj\Release\jQueryMobileAutoComplete.pdb

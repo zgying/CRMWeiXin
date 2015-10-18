@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Web.App_Master.Admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .RadMenu .rmGroup
+        {
+            background-image: none !important;
+        }
+        .RadMenu .rmGroup .rmText
+        {
+            padding: 0 5px 0 5px !important;
+        }
+        .menu a span
+        {
+            cursor: pointer;
+        }
+        .EditFormHeader td
+        {
+            font-size: 14px;
+            padding: 5px 0px;
+        }
+        .MyImageButton
+        {
+            cursor: hand;
+        }
+        .TxtValidate
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <form id="frmMain" runat="server">
+    <div>
+        <div>
+            <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+                <script type="text/javascript">
+                    function RowDblClick(sender, eventArgs) {
+                        sender.get_masterTableView().editItem(eventArgs.get_itemIndexHierarchical());
+                    }
+                </script>
+            </telerik:RadCodeBlock>
+            <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+            </telerik:RadScriptManager>
+            <telerik:RadFormDecorator ID="FormDecorator1" runat="server" DecoratedControls="all">
+            </telerik:RadFormDecorator>
+            <table>
+                <tr>
+                    <td>
+                        <label>
+                            Admin Panel - User:
+                            <%=Session["Email"]%>
+                            - PortalID:<%=Session["PortalID"]%></label>
+                    </td>
+                    <td id="ChangePortal1" runat="server" visible="false">
+                        <label>
+                            Change Portal:</label>
+                    </td>
+                    <td id="ChangePortal2" runat="server" visible="false">
+                        <telerik:RadComboBox runat="server" ID="ddPortal" Width="100px" ZIndex="8000" AutoPostBack="true"
+                            OnTextChanged="ddPortal_SelectedIndexChanged">
+                        </telerik:RadComboBox>
+                    </td>
+                </tr>
+            </table>
+            <telerik:RadMenu ID="RadMenu1" runat="server" CssClass="menu" Width="100%">
+            </telerik:RadMenu>
+        </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+    </form>
+</body>
+</html>

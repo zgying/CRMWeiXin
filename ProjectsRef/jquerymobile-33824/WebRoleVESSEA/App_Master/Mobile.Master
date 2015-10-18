@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Mobile.master.cs" Inherits="Web.App_Master.Mobile" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <title></title>
+    <meta http-equiv="content-language" content="en" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="/Images/icon.png" />
+    <link rel="apple-touch-startup-image" href="/Images/splash.png">
+    <cntl:Scripts ID="Scripts" runat="server" />
+</head>
+<body>
+    <div data-role="page" class="type-interior">
+        <div data-role="header" data-position="inline">
+            <a class="ui-btn-left" data-icon="home" data-ajax="false" href="/Default.aspx">Home</a>
+            <asp:LoginView ID="LoginView1" runat="server">
+                <AnonymousTemplate>
+                    <h1>
+                        jQuery Mobile</h1>
+                    <a class="ui-btn-right" data-icon="gear" data-ajax="false" href="/Account/Login.aspx">
+                        Login</a>
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                    <h1>
+                        Welcome
+                        <asp:LoginName ID="LoginName" runat="server" />
+                    </h1>
+                    <a class="ui-btn-right" data-icon="gear" data-ajax="false" href="/Account/Logout.aspx">
+                        Logout</a>
+                </LoggedInTemplate>
+            </asp:LoginView>
+        </div>
+        <div data-role="content">
+            <div class="content-primary" runat="server" id="ContentPrimary">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="content-secondary" runat="server" id="ContentSecondary">
+                <div id="DivListView" runat="server" />
+                <div data-role="footer" class="footer-docs">
+                    <p>
+                        &copy;<%=DateTime.Now.Year%>VESSEA - PortalID=<%=Session["PortalID"]%>
+                        <a href="/qrcode.jpg" target="_blank">QRCODE</a></p>
+                    <p>
+                        <b>CodePlexProject Hosting for Open Source Software <a href="http://jquerymobile.codeplex.com"
+                            target="_blank" title="CodePlex">jQueryMobile.CodePlex.com</a></b></p>
+                    <p>
+                        <b>Powered by AppHarbor - .NET cloud application platform <a href="https://appharbor.com"
+                            target="_blank" title="AppHarbor">AppHarbor.com</a></b></p>
+                </div>
+            </div>
+            <div runat="server" id="ContentSingle" style="padding: 15px">
+                <asp:ContentPlaceHolder ID="SecoundContent" runat="server" />
+            </div>
+        </div>
+        <div data-role="footer" id="footer" data-position="fixed">
+            <div data-role="navbar" id="navbar">
+                <ul>
+                    <li><a data-icon="home" data-ajax="false" href="/Default.aspx">Home</a></li>
+                    <li><a data-icon="home" data-ajax="false" onclick="getLocation();" href="#">Geo</a></li>
+                    <li><a data-icon="grid" data-ajax="false" href="/Admin/Default.aspx">Admin</a></li>
+                    <asp:LoginView ID="LoginView2" runat="server">
+                        <AnonymousTemplate>
+                            <li><a data-icon="grid" data-ajax="false" href="/Account/Login.aspx">Login</a></li>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <li><a data-icon="grid" data-ajax="false" href="/Account/Logout.aspx">Logout</a></li>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                    <asp:LoginView ID="LoginView3" runat="server">
+                        <AnonymousTemplate>
+                            <li><a data-icon="star" data-ajax="false" href="/Account/Register.aspx">Register</a></li>
+                        </AnonymousTemplate>
+                    </asp:LoginView>
+                    <li><a data-icon="arrow-u" data-ajax="false" onclick="jQuery('html,body').animate({scrollTop:0},'slow');"
+                        href="javascript:void(0);">Top</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

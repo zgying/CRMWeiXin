@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="WindowsAzureVESSEA" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2012-05.1.7">
+  <Role name="WebRoleVESSEA">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=vessea;AccountKey=zETlHwanjCjUsZ6JDf+vFEprwTOmIm5LnOl0X+zOfFdztTXn9tnAFvfm/TXv6yLU5c/ehzUAL4kPbct+HNjggg==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.ActivationToken" value="2218bc65-435c-489e-9e92-b055f45b8081" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.Refresh" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.WaitForConnectivity" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.Upgrade" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.EnableDomainJoin" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.DomainFQDN" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.DomainControllerFQDN" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.DomainAccountName" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.DomainPassword" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.DomainOU" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.Administrators" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Connect.DomainSiteName" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="melgert" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEEQzivmdJBuBSqMPXzbeeVkwDQYJKoZIhvcNAQEBBQAEggEAnd8+wYInExfX0AIqNMNJ1EsAin01wwgaz0+Gss9Gq/VSe+wZmAnK0mbibEcUFJMACMU3R619M5HsM4MzPZs6BddirXVdqY8cDLKjyfZgfwhFni5B2kwLLe9fEadLPsa1t4cLciRn8UNfq/orjkAv2ey/SYInIi9VbPIcup9qC3aid0i9MOoS4zYQ4fa3oJ0Ik1K1agb3bCZF5dlKSq/0ucl0tZk39rMZm3wppVKRb5SUKjkoRpPE+7TMdd6WQUYJK8SZCdt98FDR/5tsUPldNCCIUjEaIXyGxewq+tVLTLaeT/a26fAzmuUnZ26e17//H4+2WtXTBc2ytXszyS16ijAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECMsSY/qPRvW+gBBA+Xfi/FdXGMhI8Tq3OlVt" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2020-04-17T23:59:59.0000000-07:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="F90AF237B38948422B978144E3F1E8C2D2713534" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>
